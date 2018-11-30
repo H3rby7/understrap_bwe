@@ -54,8 +54,25 @@ $container = get_theme_mod( 'understrap_container_type' );
 						
 					
 					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
+								$custom_logo_id = get_theme_mod( 'custom_logo' );
+
+								// We have a logo. Logo is go.
+								if ( $custom_logo_id ) {
+
+									$imgMetaData = wp_get_attachment_image_src( $custom_logo_id, 'full', false );
+									$imgUrl      = '';
+
+									if ( $imgMetaData ) {
+										$imgUrl = $imgMetaData[0];
+									}
+
+									$html = sprintf( '<a href="%1$s" rel="home" itemprop="url"><div class="logo" style="background-image: url(\'%2$s\')"></div></a>',
+										esc_url( home_url( '/' ) ),
+										$imgUrl
+									);
+									echo $html;
+								}
+							} ?><!-- end custom logo -->
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
