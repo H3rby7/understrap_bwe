@@ -48,8 +48,9 @@ var gulpSequence = require('gulp-sequence');
 // Run:
 // gulp browser-sync
 // Starts browser-sync task for starting the server.
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function(cb) {
     browserSync.init(browserSyncWatchFiles, browserSyncOptions);
+    cb();
 });
 
 // Run:
@@ -100,8 +101,8 @@ gulp.task('scss-for-dev', function(cb) {
     cb();
 });
 
-gulp.task('watch-scss', gulp.series('browser-sync', function () {
-    gulp.watch('./sass/**/*.scss', ['scss-for-dev']);
+gulp.task('watch-scss', gulp.parallel('browser-sync', function () {
+    gulp.watch('./sass/**/*.scss', gulp.series('scss-for-dev'));
 }));
 
 

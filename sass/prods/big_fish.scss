@@ -1,0 +1,74 @@
+$big-fish-yellow: #fff;
+$big-fish-sky: rgb(0, 110, 255);
+
+body.big_fish {
+  background: $big-fish-sky;
+  background-image: url("../img/src/big-fish/sky.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.big_fish {
+  width: 100%;
+  height: 100%;
+  font-family: bigFishHeading;
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  color: $big-fish-yellow;
+  font-size: 25px;
+  margin: 0;
+
+  h1, h2, h3, h4, h5, h6, #foreground {
+    font-family: bigFishHeading;
+    word-spacing: 0.2em;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  #foreground,
+  .musical,
+  #page-wrapper,
+  #full-width-page-wrapper,
+  #single-wrapper,
+  #page-wrapper {
+    background-color: transparent;
+  }
+
+  #musical_logo {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: 320px;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .footer {
+    background-image: url("../img/src/big-fish/flowers.png");
+    background-size: 2000px;
+    background-repeat: repeat-x;
+    background-position-y: -50px;
+    padding-top: 90px;
+    height: 150px;
+    overflow-y: hidden;
+
+    .navbar-dark.navbar {
+      .navbar-nav .nav-link {
+        color: #034e00;
+      }
+      padding-bottom: 0;
+    }
+  }
+}
+
+
+@font-face {
+  font-family: bigFishHeading;
+  src: url("../fonts/ThirstyScriptExtraBoldDemo.otf");
+}
