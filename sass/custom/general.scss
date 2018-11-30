@@ -1,0 +1,373 @@
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: $color-base;
+}
+
+#scrolldowndiv {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  position: fixed;
+  margin: 0;
+  margin-left: 50%;
+  text-align: center;
+  bottom: 10px;
+  left: -20px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.5;
+  transition: opacity 1.5s linear;
+  -webkit-transition: opacity 1.5s linear;
+  -moz-transition: opacity 1.5s linear;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 100;
+  border-width: 5px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: table;
+}
+
+#scrolldowndiv > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.scrolldownpic {
+  height: 20px;
+  width: 30px;
+  margin: 0 auto;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+  z-index: -100;
+}
+
+#foreground {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.f_item {
+  position: relative;
+  box-sizing: content-box;
+  overflow: hidden;
+  height: 100vh;
+  /*max-height: 80vw;*/
+  min-height: 600px;
+  padding: 0 4em;
+  z-index: 0;
+  /*
+  border-bottom-style: outset;
+  border-bottom-width: 20px;
+  border-bottom-color: rgba(23, 46, 9, 0.7);
+  */
+}
+
+.f_item_last {
+  border-bottom: 0 !important;
+}
+
+.rotate5 {
+  transform: rotate(5deg);
+}
+
+/* Centering stuff in other suff */
+
+.parallax_center_child {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.parallax_center_parent {
+  display: table;
+  width: 100%;
+  height: 90%;
+  padding-top: 5%;
+  margin: 0 auto;
+}
+
+.center_child {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.center_child > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Small div creating a black blurry transition*/
+
+.blackfade {
+  position: relative;
+  z-index: 2;
+  height: 0px;
+  width: 100%;
+}
+
+.blackfade > div {
+  position: relative;
+  top: -25px;
+  height: 50px;
+  width: 100%;
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /*Standard*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Ticket Table */
+
+table.ticket {
+  width: 100%;
+  border: 1px solid #444444;
+  color: #000000;
+  text-align: center;
+  table-layout: fixed;
+
+  > tbody {
+    width: 100%;
+
+    @media screen and (max-width: 961px) {
+      font-size: 2vw;
+    }
+
+    > tr {
+
+      > th {
+
+        background-color: #ff0000;
+        height: 2em;
+        border: 1px solid #444444;
+        font-size: 2em;
+      }
+
+      > td {
+        width: auto;
+        vertical-align: middle;
+        height: 4em;
+        border: 1px solid #444444;
+        font-weight: 400;
+        font-size: 2em;
+        padding: 0;
+        background-color: white;
+
+        &:hover {
+          background-color: rgba(200, 200, 200, 1);
+        }
+
+        &.noHover:hover {
+          background: white;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          color: inherit;
+          text-decoration: none;
+
+          > div {
+            vertical-align: middle;
+            width: 100%;
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+.ticketDate {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ticketAnnotation {
+  word-wrap: normal;
+  font-size: 60%;
+}
+
+.ticketTime {
+  font-size: 60%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Countdown Timer */
+
+.cd_table {
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.cd_table td {
+  padding: 8px;
+}
+
+.cd_header {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.cd_timer {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.cd_timer td {
+  width: 25%;
+}
+
+.cd_legend {
+  color: #3a3a3a;
+  font-size: 50%;
+  font-weight: bold;
+}
+
+.cd_date {
+  font-size: 75%;
+}
+
+.cd_timer > td,
+.cd_legend > td {
+  border-right: 1px solid #656565;
+}
+
+.cd_timer td:last-child,
+.cd_legend td:last-child {
+  border-right: none !important;
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+hr {
+  border-top: $hr_border;
+}

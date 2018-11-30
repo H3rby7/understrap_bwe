@@ -1,0 +1,41 @@
+.header-nav {
+
+  .navbar {
+
+    background-color: black !important;
+
+    .logo {
+      width: 200px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    #navbarNavDropdown {
+      position: relative;
+    }
+
+    ul {
+      position: absolute;
+      right: 0;
+      text-align: center;
+
+      @media screen and (max-width: 768px) {
+        position: relative !important;
+
+        li {
+          border-bottom: $hr_border;
+        }
+
+        :last-child {
+          border-bottom: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}

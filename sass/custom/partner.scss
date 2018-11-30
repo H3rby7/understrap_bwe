@@ -1,0 +1,21 @@
+.partner-box {
+
+  border: $hr_border;
+  padding: 10px;
+  margin-bottom: 30px;
+
+  .partner-logo {
+    margin-bottom: 10px;
+    height: 200px;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .partner-text {
+    height: 100px;
+    overflow: hidden;
+  }
+
+}

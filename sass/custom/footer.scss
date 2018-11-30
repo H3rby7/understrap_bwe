@@ -1,0 +1,49 @@
+.footer {
+  // background-color: black;
+
+  .footer-nav {
+    width: 100%;
+  }
+
+  ul {
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    li {
+      flex-grow: 1;
+      text-align: center;
+      box-sizing: border-box;
+      margin-right: 1em;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      li {
+        border-bottom: $hr_border;
+      }
+
+      :last-child {
+        border-bottom: none;
+      }
+
+    }
+
+    .icon-facebook {
+
+      height: inherit;
+      background-image: url('../img/facebook.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 32px;
+
+      a {
+        color: rgba(0, 0, 0, 0) !important;
+      }
+    }
+    
+  }
+
+}

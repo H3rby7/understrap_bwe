@@ -1,0 +1,52 @@
+.chronik {
+
+  ul.musical-side-list {
+
+    padding-left: 0;
+
+    li {
+
+      list-style-type: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+  }
+
+  .musical-big-list {
+
+    .musical-image {
+      // as background images. didn't look as well.
+      //width: 100%;
+      //height: 200px;
+      //overflow: hidden;
+      //background-position: center;
+      //background-size: cover;
+      //background-repeat: no-repeat;
+
+      > img {
+        max-height: 300px;
+        text-align: center;
+      }
+
+    }
+
+    .musical-entry {
+      margin-bottom: 30px;
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: $hr_border;
+    }
+
+    :last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+  }
+
+}
