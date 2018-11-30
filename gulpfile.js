@@ -46,6 +46,13 @@ var gulpSequence = require('gulp-sequence');
 
 
 // Run:
+// gulp browser-sync
+// Starts browser-sync task for starting the server.
+gulp.task('browser-sync', function() {
+    browserSync.init(browserSyncWatchFiles, browserSyncOptions);
+});
+
+// Run:
 // gulp sass + cssnano + rename
 // Prepare the min.css for production (with 2 pipes to be sure that "theme.css" == "theme.min.css")
 gulp.task('scss-for-prod', function() {
@@ -91,9 +98,9 @@ gulp.task('scss-for-dev', function() {
         .pipe(gulp.dest('./css'))
 });
 
-gulp.task('watch-scss', ['browser-sync'], function () {
+gulp.task('watch-scss', gulp.series('browser-sync', function () {
     gulp.watch('./sass/**/*.scss', ['scss-for-dev']);
-});
+}));
 
 
 // Run:
@@ -175,21 +182,6 @@ gulp.task('cleancss', function() {
 });
 
 gulp.task('styles', function(callback){ gulpSequence('sass', 'minify-css')(callback) });
- 
-
-// Run:
-// gulp browser-sync
-// Starts browser-sync task for starting the server.
-gulp.task('browser-sync', function() {
-    browserSync.init(browserSyncWatchFiles, browserSyncOptions);
-});
-
-
-// Run:
-// gulp watch-bs
-// Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', ['browser-sync', 'watch', 'scripts'], function () { });
-
 
 // Run: 
 // gulp scripts. 
@@ -213,6 +205,11 @@ gulp.task('scripts', function() {
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));
 });
+
+// Run:
+// gulp watch-bs
+// Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
+gulp.task('watch-bs', gulp.series('browser-sync', 'watch', 'scripts', function () { }));
 
 // Deleting any file inside the /src folder
 gulp.task('clean-source', function () {
@@ -267,28 +264,28 @@ gulp.task('copy-assets', function() {
     return stream;
 });
 
-// Run
-// gulp dist
-// Copies the files to the /dist folder for distribution as simple theme
-gulp.task('dist', ['clean-dist'], function() {
-    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*'])
-    .pipe(gulp.dest('dist/'))
-});
-
 // Deleting any file inside the /dist folder
 gulp.task('clean-dist', function () {
   return del(['dist/**/*',]);
 });
 
 // Run
-// gulp dist-product
-// Copies the files to the /dist-prod folder for distribution as theme with all assets
-gulp.task('dist-product', ['clean-dist-product'], function() {
-    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!dist','!dist/**','!dist-product','!dist-product/**', '*'])
-    .pipe(gulp.dest('dist-product/'))
-});
+// gulp dist
+// Copies the files to the /dist folder for distribution as simple theme
+gulp.task('dist', gulp.series('clean-dist', function() {
+    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*'])
+    .pipe(gulp.dest('dist/'))
+}));
 
 // Deleting any file inside the /dist-product folder
 gulp.task('clean-dist-product', function () {
   return del(['dist-product/**/*',]);
 });
+
+// Run
+// gulp dist-product
+// Copies the files to the /dist-prod folder for distribution as theme with all assets
+gulp.task('dist-product', gulp.series('clean-dist-product', function() {
+    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!dist','!dist/**','!dist-product','!dist-product/**', '*'])
+    .pipe(gulp.dest('dist-product/'))
+}));
