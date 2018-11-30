@@ -18,7 +18,7 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost/wordpress/",
+    proxy: "localhost/bwe/",
     notify: false
 };
 
@@ -84,7 +84,7 @@ gulp.task('scss-for-prod', function() {
 // Run:
 // gulp sourcemaps + sass + reload(browserSync)
 // Prepare the child-theme.css for the development environment
-gulp.task('scss-for-dev', function() {
+gulp.task('scss-for-dev', function(cb) {
     gulp.src('./sass/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
@@ -94,8 +94,10 @@ gulp.task('scss-for-dev', function() {
         }))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass())
+        .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./css'));
+    cb();
 });
 
 gulp.task('watch-scss', gulp.series('browser-sync', function () {
