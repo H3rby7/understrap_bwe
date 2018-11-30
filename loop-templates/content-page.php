@@ -6,6 +6,9 @@
  */
 
 ?>
+
+<?php get_template_part( 'loop-templates/jsForProdStyleLoading' ); ?>
+
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
