@@ -28,6 +28,7 @@ endwhile;
         (function loadProdStyle() {
             var target = document.getElementsByTagName("body")[0];
             target.classList.add('big_fish');
+            target.classList.add('landing');
         })();
     </script>
 

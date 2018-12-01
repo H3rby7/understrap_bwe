@@ -17,12 +17,25 @@ body.big_fish {
   min-height: 100vh;
   position: relative;
   min-width: 500px;
+  padding-bottom: 200px;
+  &.landing {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm)) {
+  body.big_fish {
+    padding-bottom: 300px;
+    &.landing {
+      padding-bottom: 150px;
+    }
+  }
 }
 
 .big_fish {
   width: 100%;
   height: 100%;
-  font-family: bigFishHeading;
+  font-family: Bodoni72;
   font-weight: 500;
   color: $big-fish-yellow;
   font-size: 25px;
@@ -30,23 +43,22 @@ body.big_fish {
 
   h1, h2, h3, h4, h5, h6, #foreground {
     font-family: bigFishHeading;
+    text-shadow: 3px 2px #000;
+  }
+  
+  h1 {
+    font-size: 8rem;
   }
 
   #foreground,
-  .musical,
   #page-wrapper,
+  .musical,
   #full-width-page-wrapper,
   #single-wrapper,
   #page-wrapper {
     background-color: transparent;
     min-height: auto;
-    margin-bottom: 100px;
-  }
-
-  
-  h1 {
-    font-size: 8rem;
-    text-shadow: 3px 2px #000;
+    text-shadow: 1px 1px 3px #000;
   }
 
   /* LANDING PAGE */
@@ -65,10 +77,6 @@ body.big_fish {
     }
 
     
-  }
-
-  p, h2 {
-    text-shadow: 3px 2px #000;
   }
 
   #musical_logo {
@@ -127,7 +135,7 @@ body.big_fish {
     position: absolute;
     width: 100%;
     bottom: 0;
-    font-size: 70%;
+    // font-size: 70%;
 
     .navbar-dark.navbar {
       .navbar-nav .nav-link {
@@ -168,10 +176,10 @@ body.big_fish {
   table.ticket {
 
     font-family: chaplinHeading;
+    text-shadow: initial;
     text-transform: uppercase;
     word-spacing: 0.2em;
     letter-spacing: 0.07em;
-    margin-bottom: 50px;
 
     > tbody {
 
