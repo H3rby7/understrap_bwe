@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "gulp copy-assets",
     "watch": "gulp watch-scss",
-    "build-scss": "gulp scss-for-dev"
+    "build-scss": "gulp scss-for-prod"
   },
   "engines": {
     "npm": ">=2.1.8"

@@ -11,7 +11,7 @@ $big-fish-outline-thickness: 1px;
 
 body.big_fish {
   background: $big-fish-sky;
-  background-image: url("../img/src/big-fish/sky.png");
+  background-image: url("../img/src/big-fish/sky.gif");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -116,7 +116,7 @@ body.big_fish {
   /* FOOTER */
 
   .footer {
-    background-image: url("../img/src/big-fish/flowers.png");
+    background-image: url("../img/src/big-fish/flowers.gif");
     background-size: 2000px;
     background-repeat: repeat-x;
     background-position-y: -50px;
@@ -208,6 +208,7 @@ body.big_fish {
   /* CHRONIK */
 
   .chronik {
+    margin-bottom: 150px;
     h1 {
       font-size: 2.5rem;
     }

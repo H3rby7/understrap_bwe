@@ -28,12 +28,10 @@ var browserSyncOptions = {
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
-var watch = require('gulp-watch');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var merge2 = require('merge2');
 var imagemin = require('gulp-imagemin');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
@@ -57,7 +55,7 @@ gulp.task('browser-sync', function(cb) {
 // Run:
 // gulp sass + cssnano + rename
 // Prepare the min.css for production (with 2 pipes to be sure that "theme.css" == "theme.min.css")
-gulp.task('scss-for-prod', function() {
+gulp.task('scss-for-prod', function(cb) {
     var source =  gulp.src('./sass/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
@@ -75,11 +73,12 @@ gulp.task('scss-for-prod', function() {
 
 
     var pipe2 = source.pipe(clone())
-        .pipe(minify-css())
+        .pipe(cleanCSS())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./css'));
 
-    return merge(pipe1, pipe2);
+    merge(pipe1, pipe2);
+    cb();
 });
 
 
