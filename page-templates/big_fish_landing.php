@@ -42,13 +42,10 @@ endwhile;
                         <h1><?php echo get_the_title(); ?></h1>
                     </div>
                     <div id="musical_logo">
-                        <img src="<?php echo $template_path; ?>/img/src/big-fish/couple.png"/>
-                        <div id="goto-musical-page">
-                            <a href="<?php echo $link . "#tickets"; ?>">
-                            Tickets
-                            </a>
-                        </div>
-                    </div>
+                        <a href="<?php echo $link . "#tickets"; ?>" id="ticket-link">
+                            <img src="<?php echo $template_path; ?>/img/src/big-fish/couple.png"/>
+                            <div id="goto-musical-page"><div>Tickets</div></div>
+                        </a>
                     </div>
                 </div>
             </div>

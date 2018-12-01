@@ -87,21 +87,28 @@ body.big_fish {
       max-width: none;
     }
 
+    a#ticket-link {
+      color: $big-fish-green;
+      text-decoration: none;
+      &:hover, &:focus {
+        opacity: 0.8;
+      }
+    }
+
     #goto-musical-page {
       position: absolute;
       bottom: 8%;
       left: 0;
       width: 100%;
-      text-align: initial;
-
-      a {
+      text-align: initial; 
+      color: $big-fish-green;
+      &:hover, &:focus {
+        opacity: 1;
         color: $big-fish-green;
-        text-decoration: none;
+      }
+      div {
         position: relative;
         left: 49%;
-        &:hover, &:focus {
-          opacity: 0.8;
-        }
       }
     }
   }
