@@ -19,7 +19,8 @@ var browserSyncWatchFiles = [
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
     proxy: "localhost/bwe/",
-    notify: false
+    notify: false,
+    host: "0.0.0.0"
 };
 
 

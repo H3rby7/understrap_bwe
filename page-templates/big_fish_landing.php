@@ -36,17 +36,19 @@ endwhile;
             <div id="start" class="">
                 <div class="center_child">
                     <div>
-                    <div id="musical_logo">
-                        <img src="<?php echo $template_path; ?>/img/src/big-fish/big-fish.png"
-                            id="pic" class="pic">
+                    <div id="musical_title">
+                        <h2>Broadway Entertainment</h2>
+                        <p>präsentiert</p>
+                        <h1><?php echo get_the_title(); ?></h1>
                     </div>
-                        <!-- <div class="goto-musical-page">
+                    <div id="musical_logo">
+                        <img src="<?php echo $template_path; ?>/img/src/big-fish/couple.png"/>
+                        <div id="goto-musical-page">
                             <a href="<?php echo $link . "#tickets"; ?>">
-                                <div id="call-to-action-text">
-                                    Jetzt Tickets sichern
-                                </div>
+                            Tickets
                             </a>
-                        </div> -->
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

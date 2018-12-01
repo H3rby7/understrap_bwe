@@ -1,11 +1,22 @@
-$big-fish-yellow: #fff;
+@import "../../src/sass/bootstrap4/variables";
+
+$big-fish-yellow: #fed90e;
 $big-fish-sky: rgb(0, 110, 255);
+$big-fish-green: #034e00;
+
+$big-fish-navbar-toggle-breakpoint: 1000px;
+$big-fish-outline-thickness: 1px;
+
+/* GENERAL */
 
 body.big_fish {
   background: $big-fish-sky;
   background-image: url("../img/src/big-fish/sky.png");
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  min-width: 500px;
 }
 
 .big_fish {
@@ -13,16 +24,12 @@ body.big_fish {
   height: 100%;
   font-family: bigFishHeading;
   font-weight: 500;
-  letter-spacing: -0.07em;
   color: $big-fish-yellow;
   font-size: 25px;
   margin: 0;
 
   h1, h2, h3, h4, h5, h6, #foreground {
     font-family: bigFishHeading;
-    word-spacing: 0.2em;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
   }
 
   #foreground,
@@ -32,22 +39,74 @@ body.big_fish {
   #single-wrapper,
   #page-wrapper {
     background-color: transparent;
+    min-height: auto;
+    margin-bottom: 100px;
+  }
+
+  
+  h1 {
+    font-size: 8rem;
+    text-shadow: 3px 2px #000;
+  }
+
+  /* LANDING PAGE */
+
+  #musical_title {
+    margin-top: 30px;
+    h1, h2 {
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    
+  }
+
+  p, h2 {
+    text-shadow: 3px 2px #000;
   }
 
   #musical_logo {
     overflow: hidden;
     position: relative;
+    top: -70px;
     display: block;
-    margin: 0 auto;
-    height: 320px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    margin-bottom: 50px;
     text-align: center;
 
     img {
-      max-height: 100%;
+      max-height: 50vh;
+      min-height: 520px;
+      max-width: none;
+    }
+
+    #goto-musical-page {
+      position: absolute;
+      bottom: 8%;
+      left: 0;
+      width: 100%;
+      text-align: initial;
+
+      a {
+        color: $big-fish-green;
+        text-decoration: none;
+        position: relative;
+        left: 49%;
+        &:hover, &:focus {
+          opacity: 0.8;
+        }
+      }
     }
   }
+
+  /* FOOTER */
 
   .footer {
     background-image: url("../img/src/big-fish/flowers.png");
@@ -55,18 +114,99 @@ body.big_fish {
     background-repeat: repeat-x;
     background-position-y: -50px;
     padding-top: 90px;
-    height: 150px;
+    min-height: 150px;
     overflow-y: hidden;
+    height: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 70%;
 
     .navbar-dark.navbar {
       .navbar-nav .nav-link {
-        color: #034e00;
+        color: $big-fish-green;
+        
+        &:hover, &:focus {
+          opacity: 0.8;
+        }
       }
       padding-bottom: 0;
     }
   }
-}
 
+  /* NAVBAR TOP BREAKPOINT */
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .navbar-expand-md .navbar-toggler {
+        display: inline-block;
+    }
+    .navbar-expand-md .navbar-collapse {
+      display: none !important;
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: $big-fish-navbar-toggle-breakpoint) {
+    .navbar-expand-md .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-md .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+  }
+
+  /* TICKET TABLE */
+
+  table.ticket {
+
+    font-family: chaplinHeading;
+    text-transform: uppercase;
+    word-spacing: 0.2em;
+    letter-spacing: 0.07em;
+    margin-bottom: 50px;
+
+    > tbody {
+
+      > tr {
+
+        > th {
+          color: $big-fish-green;
+          background-color: $big-fish-yellow;
+        }
+
+        > td {
+          background: rgba(255,255,255,0.3);
+          word-spacing: 0;
+          letter-spacing: 0;
+
+          &:hover {
+            background-color: rgba(255,255,255, 0.5);
+          }
+
+          &.noHover:hover {
+            background: rgba(255,255,255,0.3);
+            color: #000000;
+          }
+
+          .ticketAnnotation {
+            font-size: 40%;
+          }
+
+        }
+      }
+    }
+  }
+
+  /* CHRONIK */
+
+  .chronik {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+}
 
 @font-face {
   font-family: bigFishHeading;
