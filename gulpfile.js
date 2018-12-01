@@ -32,7 +32,6 @@ var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
 var clone = require('gulp-clone');
@@ -123,28 +122,6 @@ gulp.task('sass', function () {
     return stream;
 });
 
-
-// Run:
-// gulp watch
-// Starts watcher. Watcher runs gulp sass task on changes
-gulp.task('watch', function () {
-    gulp.watch('./sass/**/*.scss', ['styles']);
-    gulp.watch([basePaths.dev + 'js/**/*.js','js/**/*.js','!js/theme.js','!js/theme.min.js'], ['scripts']);
-
-    //Inside the watch task.
-    gulp.watch('./img/**', ['imagemin'])
-});
-
-// Run:
-// gulp imagemin
-// Running image optimizing task
-gulp.task('imagemin', function(){
-    gulp.src('img/src/**')
-    .pipe(imagemin())
-    .pipe(gulp.dest('img'))
-});
-
-
 // Run:
 // gulp cssnano
 // Minifies CSS files
@@ -208,11 +185,6 @@ gulp.task('scripts', function() {
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));
 });
-
-// Run:
-// gulp watch-bs
-// Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', gulp.series('browser-sync', 'watch', 'scripts', function () { }));
 
 // Deleting any file inside the /src folder
 gulp.task('clean-source', function () {
