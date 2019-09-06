@@ -17,26 +17,26 @@ $musical_query = new WP_Query(array(
 
 while ($musical_query->have_posts()) : $musical_query->the_post();
 
-$link = get_post_permalink(get_the_ID());
+    $link = get_post_permalink(get_the_ID());
 
-break;
+    break;
 
 endwhile;
 ?>
 
-    <script type="application/javascript">
-        (function loadProdStyle() {
-            var target = document.getElementsByTagName("body")[0];
-            target.classList.add('big_fish');
-            target.classList.add('landing');
-        })();
-    </script>
+<script type="application/javascript">
+    (function loadProdStyle() {
+        var target = document.getElementsByTagName("body")[0];
+        target.classList.add('big_fish');
+        target.classList.add('landing');
+    })();
+</script>
 
-    <div class="big_fish">
-        <div id="foreground">
-            <div id="start" class="">
-                <div class="center_child">
-                    <div>
+<div class="big_fish">
+    <div id="foreground">
+        <div id="start" class="">
+            <div class="center_child">
+                <div>
                     <div id="musical_title">
                         <h2>Broadway Entertainment</h2>
                         <p>präsentiert</p>
@@ -44,13 +44,18 @@ endwhile;
                     </div>
                     <div id="musical_logo">
                         <a href="<?php echo $link . "#tickets"; ?>" id="ticket-link">
-                            <img src="<?php echo $template_path; ?>/img/src/big-fish/couple.png"/>
-                            <div id="goto-musical-page"><div>Tickets</div></div>
+                            <img src="<?php echo $template_path; ?>/img/src/big-fish/couple.png" />
+                            <div id="goto-musical-page">
+                                <div>Tickets</div>
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="kuss-logo">
+        <img src="<?php echo $template_path; ?>/img/src/big-fish/logo_kuss.jpg" />
+    </div>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
