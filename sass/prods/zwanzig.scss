@@ -117,6 +117,50 @@ body.zwanzig {
     letter-spacing: 0;
     word-spacing: 0;
   }
+
+/* TICKET TABLE */
+
+h1.musical-heading {
+  display: none;
+}
+
+table.ticket {
+
+  font-family: helveticaNew;
+  text-shadow: initial;
+
+  > tbody {
+
+    > tr {
+
+      > th {
+        color: $text_color;
+        background-color: $bg_fallback;
+      }
+
+      > td {
+        background: rgba(255,255,255,0.5);
+        word-spacing: 0;
+        letter-spacing: 0;
+
+        &:hover {
+          background-color: rgba(255,255,255, 0.7);
+        }
+
+        &.noHover:hover {
+          background: rgba(255,255,255,0.5);
+          color: #000000;
+        }
+
+        .ticketAnnotation {
+          font-size: 40%;
+        }
+
+      }
+    }
+  }
+}
+
 }
 
 @font-face {
