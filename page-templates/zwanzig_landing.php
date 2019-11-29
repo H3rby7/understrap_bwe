@@ -52,9 +52,11 @@ endwhile;
                 <?php the_content(); ?>
             </div>
             <div class="ticket_cta">
-                <div>
-                    <p>Jetzt <strong>TICKETS</strong> sichern!</p>
-                </div>
+                <a href="<?php echo $link . "#tickets"; ?>">
+                    <div>
+                        <p>Jetzt <strong>TICKETS</strong> sichern!</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

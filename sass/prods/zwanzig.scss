@@ -85,7 +85,18 @@ body.zwanzig {
       position: absolute;
       top: $start_padding;
       right: 0;
-      > div {
+      a {
+        color: $text_color;
+        text-decoration: none;
+        &:hover, &:focus {
+          text-decoration: none;
+          div {
+            transform: scale(1.1, 1.1);
+          }
+        }
+      }
+      div {
+        transition-duration: 200ms;
         border-radius: 100%;
         width: $ticket_circle_size;
         height: $ticket_circle_size;
