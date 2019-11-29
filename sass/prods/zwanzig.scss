@@ -81,8 +81,14 @@ body.zwanzig {
         text-align: justify;
       }
     }
+
     .ticket_cta {
       position: absolute;
+      @media (max-width: 1200px) {
+        position: relative;
+        top: unset;
+        right: unset;
+      }
       top: $start_padding;
       right: 0;
       a {
@@ -101,6 +107,9 @@ body.zwanzig {
         width: $ticket_circle_size;
         height: $ticket_circle_size;
         background-color: rgba($color: #ffffff, $alpha: 0.3);
+        @media (max-width: 1200px) {
+          margin: 1rem auto;
+        }
         > p {
           font-size: 3.5rem;
           width: inherit;
