@@ -45,30 +45,6 @@ endwhile;
                             <img src="<?php echo $template_path; ?>/img/src/chaplin/chaplin_full_transparent.png"
                                  id="pic" class="pic">
                         </div>
-<!--                        <div id="countdown">-->
-<!--                            <table class="cd_table">-->
-<!--                                <tbody>-->
-<!--                                <tr class="cd_header">-->
-<!--                                    <td colspan="4">Tickets in</td>-->
-<!--                                </tr>-->
-<!--                                <tr class="cd_timer">-->
-<!--                                    <td id="cd_days"></td>-->
-<!--                                    <td id="cd_hours"></td>-->
-<!--                                    <td id="cd_minutes"></td>-->
-<!--                                    <td id="cd_seconds"></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="cd_legend">-->
-<!--                                    <td>Tage</td>-->
-<!--                                    <td>Stunden</td>-->
-<!--                                    <td>Minuten</td>-->
-<!--                                    <td>Sekunden</td>-->
-<!--                                </tr>-->
-<!--                                <tr class="cd_date">-->
-<!--                                    <td colspan="4">1. Dezember 2017</td>-->
-<!--                                </tr>-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </div>-->
                         <div class="goto-musical-page">
                             <a href="<?php echo $link . "#tickets"; ?>">
                                 <div id="call-to-action-text">
