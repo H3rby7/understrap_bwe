@@ -51,6 +51,11 @@ endwhile;
             <div class="musical_teaser">
                 <?php the_content(); ?>
             </div>
+            <div class="ticket_cta">
+                <div>
+                    <p>Jetzt <strong>TICKETS</strong> sichern!</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

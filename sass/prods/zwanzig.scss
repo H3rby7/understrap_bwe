@@ -2,6 +2,8 @@
 
 $bg_fallback: #68000c;
 $text_color: #ffffff;
+$start_padding: 5rem;
+$ticket_circle_size: 18rem;
 
 /* GENERAL */
 
@@ -29,8 +31,11 @@ body.zwanzig {
 .zwanzig {
   #foreground {
     #start {
-      width: 100%;
-      padding-top: 5rem;
+      position: relative;
+      margin: 0 auto;
+      width: 90%;
+      max-width: 1200px;
+      padding-top: $start_padding;
     }
     .center_child {
       text-align: center;
@@ -71,11 +76,26 @@ body.zwanzig {
       }
     }
     .musical_teaser {
-      width: 90%;
-      max-width: 1200px;
       margin: 5rem auto 0 auto;
       > * {
         text-align: justify;
+      }
+    }
+    .ticket_cta {
+      position: absolute;
+      top: $start_padding;
+      right: 0;
+      > div {
+        border-radius: 100%;
+        width: $ticket_circle_size;
+        height: $ticket_circle_size;
+        background-color: rgba($color: #ffffff, $alpha: 0.3);
+        > p {
+          font-size: 3.5rem;
+          width: inherit;
+          overflow: hidden;
+          transform: rotate(-10deg);
+        }
       }
     }
   }
