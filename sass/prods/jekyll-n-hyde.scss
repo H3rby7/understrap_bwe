@@ -13,7 +13,7 @@ body.jekyll_and_hyde {
   position: relative;
   min-width: 500px;
   font-size: 1.5rem;
-  font-family: jekyll_and_hyde;
+  font-family: helveticaNew;
   color: $text_color;
 }
 
@@ -28,6 +28,7 @@ body.jekyll_and_hyde {
 
 .jekyll_and_hyde {
   #foreground {
+    font-family: jekyll_and_hyde;
     #start {
       position: relative;
       margin: 0 auto;
@@ -35,7 +36,10 @@ body.jekyll_and_hyde {
       max-width: 1200px;
       padding-top: $start_padding;
     }
-    .center_child {
+    .center-child {
+      margin: 0 auto;
+      width: 30rem;
+      display: block;
       text-align: center;
     }
     .musical_image {
@@ -43,26 +47,32 @@ body.jekyll_and_hyde {
       background-size: contain;
       background-repeat: no-repeat;
       background-position-x: center;
-      width: 100%;
-      min-width: 500px;
       height: 50vh;
       min-height: 600px;
+      width: 100%;
     }
 
     .musical_title {
-      margin-top: 2rem; 
-      text-align: center;
+      margin: 0 auto;
       text-transform: uppercase;
+      text-align: right;
+      display: inline-block;
       .title {
-        // letter-spacing: 0.4rem;
+        letter-spacing: 0.4rem;
+        text-decoration: underline;
         font-size: 3rem;
+        font-weight: 100;
+      }
+      .sub_title {
+        position: relative;
+        top: -1rem;
+        text-align: right;
       }
     }
 
   }
 
-  .header-nav {
-    // font-family: $font-family-base;
+  .header-nav, .footer-nav {
     font-family: jekyll_and_hyde;
     letter-spacing: 0;
     word-spacing: 0;
@@ -75,7 +85,6 @@ h1.musical-heading {
 }
 
 table.ticket {
-
   font-family: helveticaNew;
   text-shadow: initial;
 
